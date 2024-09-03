@@ -14,12 +14,9 @@ Furthermore, H3 defines more than one grid size for the planet. In fact H3 defin
 
 Read more about the H3 grid system here: https://h3geo.org
 
-# Installation via Cocoapods
+# Installation via SPM
 
-Create a [Podfile](https://guides.cocoapods.org/syntax/podfile.html) with the following specification:
-   ```ruby
-   pod 'H3', :git => 'git@github.com:ehmjaysee/h3-ios.git'
-  ```
+Add a package from URL https://github.com/The-Mobile-Team/h3geoSwift with Dependency Rule = Branch as "main"
 
 # Usage with Swift
 
