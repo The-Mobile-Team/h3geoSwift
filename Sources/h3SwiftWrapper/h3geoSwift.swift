@@ -14,7 +14,7 @@ extension CLLocationCoordinate2D {
         
         var location = GeoCoord(lat: degsToRads(latitude),
                                 lon: degsToRads(longitude))
-        let index = geoToH3(&location, 6)
+        let index = geoToH3(&location, resolution)
         
         return index
         
