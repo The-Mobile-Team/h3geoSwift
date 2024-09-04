@@ -21,7 +21,7 @@ extension CLLocationCoordinate2D {
     }
     
     // init a 2d coordinate as the center of a H3 cell index
-    init?(with index: UInt64, resolution: Int32) {
+    public init?(with index: UInt64, resolution: Int32) {
         var location = GeoCoord()
         h3ToGeo(index, &location)
         
