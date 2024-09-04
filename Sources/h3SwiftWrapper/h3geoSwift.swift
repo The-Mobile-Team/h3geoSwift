@@ -25,7 +25,7 @@ extension CLLocationCoordinate2D {
         var location = GeoCoord()
         h3ToGeo(index, &location)
         
-        self.init(latitude: location.lat, longitude: location.lon)
+        self.init(latitude: radsToDegs(location.lat), longitude: radsToDegs(location.lon))
     }
     
     // Get the neighbor cells for a given set of 2D coordinates and ring size
