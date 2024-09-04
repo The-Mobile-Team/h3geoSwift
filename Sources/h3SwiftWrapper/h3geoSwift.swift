@@ -42,4 +42,37 @@ extension CLLocationCoordinate2D {
         
     }
     
+    // Get the neighbor cells for a given set of 2D coordinates and ring size
+    public func get6PointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
+
+        let index = h3CellIndex(resolution: resolution)
+        var geoBoundary = GeoBoundary()
+        
+        h3ToGeoBoundary(index, &geoBoundary)
+        var pointsCoords: [CLLocationCoordinate2D] = []
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.0.lat),
+                                                   longitude: geoBoundary.verts.0.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.1.lat),
+                                                   longitude: geoBoundary.verts.1.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.2.lat),
+                                                   longitude: geoBoundary.verts.2.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.3.lat),
+                                                   longitude: geoBoundary.verts.3.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.4.lat),
+                                                   longitude: geoBoundary.verts.4.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.5.lat),
+                                                   longitude: geoBoundary.verts.5.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.6.lat),
+                                                   longitude: geoBoundary.verts.6.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.7.lat),
+                                                   longitude: geoBoundary.verts.7.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.8.lat),
+                                                   longitude: geoBoundary.verts.8.lon))
+        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.9.lat),
+                                                   longitude: geoBoundary.verts.9.lon))
+        
+        return pointsCoords
+        
+    }
+    
 }

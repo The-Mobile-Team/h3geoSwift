@@ -35,6 +35,13 @@ func testH3() {
     for item in neighbors {  
         print(String(item, radix: 16, uppercase: true)) 
     }
+    
+    if let intFromHex = UInt64(hex, radix: 16) {
+      print("\nNow Back to :\n index: \(intFromHex)")
+      let coords = CLLocationCoordinate2D.init(with: intFromHex, resolution: resolution)
+      print("coords: \(coords)")
+  }
+
 }
 ```
 
