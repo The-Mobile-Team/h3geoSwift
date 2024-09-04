@@ -42,13 +42,16 @@ extension CLLocationCoordinate2D {
         
     }
     
-    // Get the neighbor cells for a given set of 2D coordinates and ring size
-    public func get6PointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
+}
 
-        let index = h3CellIndex(resolution: resolution)
+extension UInt64 {
+    
+    // Get all shape coordinates for a given set of 2D coordinates and ring size
+    public func getCellPointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
+
         var geoBoundary = GeoBoundary()
         
-        h3ToGeoBoundary(index, &geoBoundary)
+        h3ToGeoBoundary(self, &geoBoundary)
         var pointsCoords: [CLLocationCoordinate2D] = []
         pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.0.lat),
                                                    longitude: geoBoundary.verts.0.lon))
