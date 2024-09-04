@@ -155,7 +155,7 @@ typedef struct {
 H3Index H3_EXPORT(geoToH3)(const GeoCoord *g, int res);
 /** @} */
 
-/** @defgroup h3ToGeo h3ToGeo
+/** @defgroup h3ToGeo h3ToGeo   
  * Functions for h3ToGeo
  * @{
  */
