@@ -20,17 +20,12 @@ extension CLLocationCoordinate2D {
         
     }
     
-    // Get the H3 cell index for a given set of 2D coordinates
-    public static func h3Coordinates(for index: UInt64, resolution: Int32) -> CLLocationCoordinate2D {
-        
-//        var location = GeoCoord(lat: degsToRads(latitude),
-//                                lon: degsToRads(longitude))
-//        let index = geoToH3(&location, resolution)
+    // init a 2d coordinate as the center of a H3 cell index
+    init?(with index: UInt64, resolution: Int32) {
         var location = GeoCoord()
         h3ToGeo(index, &location)
         
-        return CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon)
-        
+        self.init(latitude: location.lat, longitude: location.lon)
     }
     
     // Get the neighbor cells for a given set of 2D coordinates and ring size
