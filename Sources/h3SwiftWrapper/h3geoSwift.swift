@@ -65,14 +65,6 @@ extension UInt64 {
                                                    longitude: radsToDegs(geoBoundary.verts.4.lon)))
         pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.5.lat),
                                                    longitude: radsToDegs(geoBoundary.verts.5.lon)))
-        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.6.lat),
-                                                   longitude: radsToDegs(geoBoundary.verts.6.lon)))
-        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.7.lat),
-                                                   longitude: radsToDegs(geoBoundary.verts.7.lon)))
-        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.8.lat),
-                                                   longitude: radsToDegs(geoBoundary.verts.8.lon)))
-        pointsCoords.append(CLLocationCoordinate2D(latitude: radsToDegs(geoBoundary.verts.9.lat),
-                                                   longitude: radsToDegs(geoBoundary.verts.9.lon)))
         
         return pointsCoords
         
