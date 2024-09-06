@@ -9,11 +9,6 @@ import h3_C_Lib
 
 extension CLLocationCoordinate2D {
     
-    // Get the H3 cell's resolution
-    public func getResolution(of index: UInt64) -> Int32 {
-        return h3GetResolution(index)
-    }
- 
     // Get the H3 cell index for a given set of 2D coordinates
     public func h3CellIndex(resolution: Int32) -> UInt64 {
         
@@ -50,6 +45,11 @@ extension CLLocationCoordinate2D {
 }
 
 extension UInt64 {
+    
+    // Get the H3 cell's resolution
+    public func getResolution() -> Int32 {
+        return h3GetResolution(self)
+    }
     
     // Get all shape coordinates for a given set of 2D coordinates and ring size
     public func getCellPointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
