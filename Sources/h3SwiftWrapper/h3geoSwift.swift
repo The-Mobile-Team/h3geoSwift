@@ -9,6 +9,11 @@ import h3_C_Lib
 
 extension CLLocationCoordinate2D {
     
+    // Get the H3 cell's resolution
+    public func getResolution(of index: UInt64) -> Int32 {
+        return h3GetResolution(index)
+    }
+ 
     // Get the H3 cell index for a given set of 2D coordinates
     public func h3CellIndex(resolution: Int32) -> UInt64 {
         
@@ -21,7 +26,7 @@ extension CLLocationCoordinate2D {
     }
     
     // init a 2d coordinate as the center of a H3 cell index
-    public init?(with index: UInt64, resolution: Int32) {
+    public init?(with index: UInt64) {
         var location = GeoCoord()
         h3ToGeo(index, &location)
         
