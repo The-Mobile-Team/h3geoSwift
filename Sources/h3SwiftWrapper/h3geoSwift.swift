@@ -51,6 +51,11 @@ extension UInt64 {
         return h3GetResolution(self)
     }
     
+    // H3Index H3_EXPORT(h3ToParent)(H3Index h, int parentRes) {
+    public func getParent(with resolution: Int32) -> UInt64 {
+        return h3ToParent(self, resolution)
+    }
+    
     // Get all shape coordinates for a given set of 2D coordinates and ring size
     public func getCellPointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
 
