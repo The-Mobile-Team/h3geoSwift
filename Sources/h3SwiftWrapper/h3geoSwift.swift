@@ -56,6 +56,19 @@ extension UInt64 {
         return h3ToParent(self, resolution)
     }
     
+    // Get the neighbor cells for index and ring size
+    public func h3Neighbors(resolution: Int32, ringLevel: Int32) -> [H3Index] {
+        
+        let count = Int(maxKringSize(ringLevel))
+        
+        var neighbors = Array(repeating: H3Index(),
+                              count: count)
+        kRing(self, ringLevel, &neighbors);
+        
+        return neighbors
+        
+    }
+    
     // Get all shape coordinates for a given set of 2D coordinates and ring size
     public func getCellPointsCoordinates(resolution: Int32, ringLevel: Int32) -> [CLLocationCoordinate2D] {
 
